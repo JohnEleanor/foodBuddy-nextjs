@@ -1,5 +1,5 @@
 
-import "./globals.css";
+import "./asset/globals.css";
 
 
 export default function RootLayout({ children }) {
