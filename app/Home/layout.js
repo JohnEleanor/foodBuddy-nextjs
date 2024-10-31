@@ -1,17 +1,14 @@
 
 import Nav from "@/components/Nav";
-import { ThemeProvider } from "@/components/ThemeProvider"
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export default function HomeLayout({ children }) {
     return (
-      <html lang="en" >
+      <html suppressHydrationWarning>
         <body>
-
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
+          <ThemeProvider attribute="class"
+            themes={['light', 'dark', 'system']}
+            defaultTheme="light"
           >
             <Nav />
             {children}

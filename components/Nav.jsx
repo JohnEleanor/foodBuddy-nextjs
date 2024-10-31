@@ -13,15 +13,17 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu, Utensils, Users, LogOut, User } from "lucide-react";
+import ModeToggle from "@/components/ModeToggle"
 
-
-import ModeToggle from "@/components/ModeToggle";
 
 export default function Nav() {
 
+
   return (
+
+    
     <div className="sticky z-50 top-0 flex h-16 whitespace-nowrap items-center gap-4 border-b bg-background px-4 md:px-6">
-      <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+      <div className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <Link
           href="/dashboard"
           className="flex items-center gap-2 text-lg md:text-base"
@@ -49,7 +51,7 @@ export default function Nav() {
         >
           ตั้งค่า
         </Link>
-      </nav>
+      </div>
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="shrink-0 md:hidden">
@@ -58,7 +60,7 @@ export default function Nav() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left">
-          <nav className="grid gap-6 text-lg font-medium">
+          <div className="grid gap-6 text-lg font-medium">
           
             <Link
               href="/dashboard"
@@ -75,7 +77,7 @@ export default function Nav() {
             >
               ตั้งค่า
             </Link>
-          </nav>
+          </div>
         </SheetContent>
       </Sheet>
       <div className="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
