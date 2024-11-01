@@ -1,12 +1,14 @@
-
-import "./asset/globals.css";
+import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <body>
-        {children}
+        <ThemeProvider attribute="class" themes={["light", "dark", "system"]} defaultTheme="light">
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -20,6 +20,7 @@ export default function ModeToggle() {
   // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
     setMounted(true)
+    console.log(mounted)
   }, [])
 
   if (!mounted) {

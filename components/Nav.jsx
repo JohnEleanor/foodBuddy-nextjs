@@ -10,44 +10,47 @@ import {
   DropdownMenuTrigger,
   DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu, Utensils, Users, LogOut, User } from "lucide-react";
-import ModeToggle from "@/components/ModeToggle"
-
+import ModeToggle from "@/components/ModeToggle";
 
 export default function Nav() {
-
-
   return (
-
-    
     <div className="sticky z-50 top-0 flex h-16 whitespace-nowrap items-center gap-4 border-b bg-background px-4 md:px-6">
       <div className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <Link
-          href="/dashboard"
+          href="/home"
           className="flex items-center gap-2 text-lg md:text-base"
         >
           <Utensils className="h-6 w-6" />
           <span className="sr-only">Acme Inc</span>
         </Link>
 
-        <Link
-          href="/dashboard"
-          className={`transition-colors hover:text-foreground`}
-        >
+        <Link href="/home" className="transition-colors hover:text-foreground">
           หน้าหลัก
         </Link>
         <Link
-          href="/history"
-          className={`transition-colors hover:text-foreground`}
+          href="/home/history"
+          className="transition-colors hover:text-foreground"
+          replace
         >
           ประวัติการกิน
         </Link>
 
         <Link
-          href="/setting"
-          className={`transition-colors hover:text-foreground`}
+          href="/home/setting"
+          className="transition-colors hover:text-foreground"
+          replace
         >
           ตั้งค่า
         </Link>
@@ -56,25 +59,20 @@ export default function Nav() {
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="shrink-0 md:hidden">
             <Menu className="h-5 w-5" />
-            <span className="sr-only">Toggle navigation menu</span>
+            <span className="sr-only">Toggle navigation menu For mobile</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="left">
+          <SheetHeader>
+            <SheetTitle></SheetTitle>
+            <SheetDescription></SheetDescription>
+          </SheetHeader>
           <div className="grid gap-6 text-lg font-medium">
-          
-            <Link
-              href="/dashboard"
-            >
-              หน้าหลัก
-            </Link>
-            <Link
-              href="/history"
-            >
+            <Link href="/home" replace>หน้าหลัก</Link>
+            <Link href="/home/history" replace>
               ประวัติการกิน
             </Link>
-            <Link
-              href="/setting"
-            >
+            <Link href="/home/setting" replace>
               ตั้งค่า
             </Link>
           </div>
@@ -84,7 +82,6 @@ export default function Nav() {
         <form className="ml-auto flex-2 sm:flex-initial "></form>
         <ModeToggle />
         <DropdownMenu>
-
           <DropdownMenuTrigger asChild>
             <Button variant="secondary" size="icon" className="rounded-full">
               <img
@@ -106,9 +103,7 @@ export default function Nav() {
                 <User className="mr-2 h-4 w-4" />
 
                 <Link href="/setting">
-                  <span
-                    className={`trasettingnsition-colors `}
-                  >
+                  <span className={`trasettingnsition-colors `}>
                     ตั้งค่าบัญชีของฉัน
                   </span>
                 </Link>

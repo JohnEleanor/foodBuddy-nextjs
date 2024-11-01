@@ -10,14 +10,14 @@ import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useEffect } from "react";
 
-export default function Home() {
+export default function page() {
   const router = useRouter();
   // inti
   const initLiff = async () => {
     try {
       await liff.init({ liffId: process.env.LINE_LIFF_ID });
       if (liff.isLoggedIn()) {
-        router.push("/home");
+        router.push("/register"); // ถ้ามีการ login แล้วให้ไปหน้า home
       }
     } catch (error) {
       console.error("liff init error", error);
